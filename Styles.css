@@ -1,5 +1,9 @@
 :root {
-  color-scheme: dark;
+  --matrix-bg: #020502;
+  --matrix-panel: #031006;
+  --matrix-border: #1eff72;
+  --matrix-text: #8dffb8;
+  --matrix-bright: #b5ffd1;
 }
 
 * {
@@ -8,25 +12,40 @@
 
 body {
   margin: 0;
-  font-family: Inter, Arial, sans-serif;
-  background: #0f172a;
-  color: #e2e8f0;
+  font-family: "Courier New", "Lucida Console", monospace;
+  color: var(--matrix-text);
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(10, 255, 100, 0.08) 0,
+      rgba(10, 255, 100, 0.08) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    radial-gradient(circle at 20% 10%, #063b15 0%, var(--matrix-bg) 42%),
+    #000;
+  text-shadow: 0 0 6px rgba(67, 255, 143, 0.45);
 }
 
 header {
   padding: 2rem 1rem;
   text-align: center;
-  background: linear-gradient(120deg, #1d4ed8, #7c3aed);
+  border-bottom: 1px solid rgba(30, 255, 114, 0.45);
+  background: linear-gradient(180deg, rgba(0, 40, 10, 0.7), rgba(0, 10, 0, 0.85));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65);
 }
 
 header h1 {
   margin: 0;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
+  letter-spacing: 0.08em;
+  color: var(--matrix-bright);
+  text-transform: uppercase;
 }
 
 header p {
-  margin: 0.5rem 0 0;
-  color: #dbeafe;
+  margin: 0.7rem 0 0;
+  color: var(--matrix-text);
 }
 
 .games-grid {
@@ -39,23 +58,26 @@ header p {
 }
 
 .game-card {
-  background: #111827;
-  border: 1px solid #334155;
-  border-radius: 12px;
+  background: linear-gradient(165deg, rgba(3, 20, 8, 0.95), rgba(0, 8, 2, 0.9));
+  border: 1px solid rgba(30, 255, 114, 0.5);
+  border-radius: 8px;
   padding: 0.9rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  box-shadow:
+    inset 0 0 20px rgba(20, 255, 110, 0.08),
+    0 0 20px rgba(13, 255, 95, 0.18);
 }
 
 .game-card h2 {
   margin: 0 0 0.75rem;
   font-size: 1.1rem;
-  color: #93c5fd;
+  color: var(--matrix-bright);
+  letter-spacing: 0.04em;
 }
 
 .game-card iframe {
   width: 100%;
   height: 360px;
-  border: 0;
-  border-radius: 8px;
-  background: #020617;
+  border: 1px solid rgba(40, 255, 125, 0.5);
+  border-radius: 6px;
+  background: #000;
 }
